@@ -1,0 +1,109 @@
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Login </title>
+
+<style>
+.navbar 
+{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 20px;
+background-color: #011628;
+color: #A3C5F1;
+}
+
+.nav-links 
+{
+color: #fff;
+font-size: 15px;
+}
+
+body 
+{
+background: #A3C5F1;
+}
+
+#frm 
+{
+border: solid black 5px;
+width: 25%;
+border-radius: 2px;
+margin: 120px auto;
+background: white;
+padding: 50px;
+}
+
+button[type="submit"] 
+{
+width: 100%;
+padding: 15px;
+background-color:#1E2840;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 10px;
+}
+
+.menu {
+display: flex;
+gap: 2em;
+font-size: 20px;
+color: #fff;
+}
+
+.message 
+{
+color: green;
+}
+
+.error-message 
+{
+color: red;
+}    
+</style>
+</head>
+<body>
+<nav class="navbar">
+<img src="200.jpg" width="250" height="150" alt="Logo">
+<ul class="nav-links">
+<div class="menu">
+<li><a href="Homepage.html">Home</a></li>
+<li><a href="About Us.html">About Us</a></li>
+<li><a href="About Us.html">Contact Us</a></li>
+
+</div>
+</ul>
+</nav>
+
+<div id="frm">
+<form method="post" action="login.php">
+<h1>Login</h1>
+<p>
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+</p>
+<p>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+</p>
+<p>
+<button type="submit" id="btn">Login</button>
+</p>
+</form>
+<?php if (isset($_SESSION['success_message'])): ?>
+<p class="message"><?php echo htmlspecialchars($_SESSION['success_message']); ?></p>
+<?php unset($_SESSION['success_message']); ?>
+<?php endif; ?>
+<?php if (isset($_SESSION['error_message'])): ?>
+<p class="error-message"><?php echo htmlspecialchars($_SESSION['error_message']); ?></p>
+<?php unset($_SESSION['error_message']); ?>
+<?php endif; ?>
+</div>
+</body>
+</html>

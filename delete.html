@@ -1,0 +1,83 @@
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Delete Student </title>
+
+<style>
+body
+{
+font-family: Arial, sans-serif;
+background-color: #0C121D;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+.container 
+{
+background-color: #A3C5F1;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+max-width: 400px;
+width: 100%;
+}
+
+h1 
+{
+color: #OC121D;
+text-align: center;
+margin-bottom: 20px;
+}
+
+label 
+{
+display: block;
+margin-bottom: 8px;
+color:  011628;
+}
+
+input[type="text"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #dddddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+button[type="submit"] 
+{
+width: 100%;
+padding: 15px;
+background-color: #1E2840;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-size: 16px;
+margin-top:10px;
+}
+
+button[type="submit"]:hover {
+background-color: #1E2840;
+}
+</body>
+</style>
+
+
+</head>
+<main>
+<div class="container">
+<h1>Delete Student</h1>
+<form method="POST" action="delete.php">
+<label for="nic">NIC:</label>
+<input type="text" id="nic" name="nic" required>
+<button type="submit"> Delete Student </button>
+</form>
+</div>
+</main>
