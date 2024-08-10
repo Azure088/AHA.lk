@@ -1,0 +1,106 @@
+<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Admin Login </title>
+
+<style>
+body 
+{
+font-family: Arial, sans-serif;
+background-color: #0C121D;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+}
+
+.container 
+{
+background-color: #A3C5F1;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 20px;
+max-width: 400px;
+width: 100%;
+}
+
+h1 
+{
+color: #0C121D;
+text-align: center;
+margin-bottom: 20px;
+}
+
+label 
+{
+display: block;
+margin-bottom: 8px;
+color: #011628;
+}
+
+input[type="text"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #dddddd;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+button[type="submit"] {
+width: 100%;
+padding: 15px;
+background-color: #1E2840;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+background-color: #1C2331;
+}
+
+.message 
+{
+color: #28a745; 
+text-align: center;
+}
+
+.error-message 
+{
+color: #dc3545; 
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<form action="adminlogin.php" method="POST">
+<h1>Log in as Admin</h1>
+<p>
+<label for="username"> Username:</label>
+<input type="text" id="username" name="username" required>
+</p>
+<p>
+<button type="submit" id="btn"> Login</button>
+</p>
+</form>
+<?php if (isset($_SESSION['success_message'])): ?>
+<p class="message"><?php echo htmlspecialchars($_SESSION['success_message']); ?></p>
+<?php unset($_SESSION['success_message']); ?>
+<?php endif; ?>
+<?php if (isset($_SESSION['error_message'])): ?>
+<p class="error-message"><?php echo htmlspecialchars($_SESSION['error_message']); ?></p>
+<?php unset($_SESSION['error_message']); ?>
+<?php endif; ?>
+</div>
+</body>
+</html>
